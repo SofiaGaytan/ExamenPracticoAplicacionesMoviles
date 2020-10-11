@@ -1,7 +1,9 @@
 # ExamenPracticoAplicacionesMoviles
 Examen Práctico de Aplicaciones Móviles
 
-Se utilizo:
+---
+
+**Se utilizo:**
 
 -HTML
 
@@ -11,7 +13,9 @@ Se utilizo:
 
 -Bootstrap 4
 
-Se apoyo de:
+---
+
+**Se apoyo de:**
 
 -Documentación de Bootstrap https://getbootstrap.com/docs/4.0/getting-started/introduction/ 
 
