@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperaturas Actuales en la Republica Mexicana</title>
+</head>
+
+<style>
+    h2 {
+        margin: 10px 10px;
+    }
+</style>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<br>
+
+<body background="imagenes/nubes.png">
+
+    <!--Titulo-->
+    <h1 class="display-3" style="text-align: center; background-color:navy; color: white;">Buscador de Temperaturas
+        Actuales en la
+        Republica Mexicana</h1>
+
+    <br>
+
+    <!--Saludo-->
+    <div id="saludo" style="text-align: center; color:white; background-color:royalblue;">
+    </div>
+
+    <!--Frase-->
+    <h4 class="h4" style="text-align: center; background-color:navy;color: white;">Conozca la temperatura
+        actual de todas las ciudades de
+        México</h4>
+
+    <br>
+
+    <!--Elegir ciudad-->
+    <form style="margin: 5px 10px;">
+        <div class="form-row">
+            <div class="col-sm-3" style="text-align: right">
+                <label style="font-size: large;"><b>Ciudad:</b></label>
+            </div>
+            <div class="col-sm-6">
+                <input class="form-control" type="text" id="ciudad" placeholder="Ingrese la ciudad">
+            </div>
+            <div class="col-sm-3">
+                <button id="buscarB" type="button" class="btn btn-primary" onclick="desactivarBoton()">Buscar</button>
+            </div>
+        </div>
+    </form>
+
+    <br><br>
+
+    <!--Alertas-->
+    <div id="alertas" class="text-center">
+        <div id="alerta" class="alert alert-danger" role="alert" style="display: none;">
+            No se ingreso el nombre de la ciudad.
+        </div>
+
+        <div id="alerta2" class="alert alert-danger" role="alert" style="display:none">
+            La ciudad no se encuentra en Mexico.
+        </div>
+    </div>
+
+    <!--Resultados-->
+    <!--
+    </div>
+    <div id="resultados" style="display: none;">
+        <div class="card border-primary mb-10" style="width: 50rem; margin: auto auto">
+            <div class="card-header h4 border-primary mb-3 text-primary" style="text-align: center;" id="Nombre"></div>
+            <div class="card-header" style="justify-self: center;">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="temp-tab" data-toggle="tab" href="#temperatura" role="tab"
+                            aria-controls="temperatura" aria-selected="true">Temperatura</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="cond-tab" data-toggle="tab" href="#condicion" role="tab"
+                            aria-controls="condicion" aria-selected="false">Condicion Climatica</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="temperatura" role="tabpanel" aria-labelledby="temp-tab">
+                    </div>
+                    <div class="tab-pane fade" id="condicion" role="tabpanel" aria-labelledby="cond-tab"></div>
+                </div>
+            </div>
+        </div>
+    </div>-->
+
+    <div id="resultados" style="display: none;">
+        <div id='tarjeta' class="card border-primary mb-10" style="width: 50rem; margin: auto auto">
+            <div class="card-header text-center bg-primary mb-3" style="color: white;" id="Nombre"></div>
+            <div class="row" style="margin: auto auto; padding: 10px;">
+                <div class="col-sm-6">
+                    <div class="card border-primary mb-3" style="width: 20rem; height: 20rem;">
+                        <div class="card-header text-center bg-primary mb-3" style="color: white;">
+                            <h4>Condicion Climatica</h4>
+                        </div>
+                        <div class="card-body" id="condicion">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card border-primary mb-3" style="width: 20rem; height: 20rem;">
+                        <div class="card-header text-center bg-primary mb-3" style="color: white;">
+                            <h4>Temperatura</h4>
+                        </div>
+                        <div class="card-body" id="temperatura">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <div id="salida" style="display: none; text-align: center; margin: 4px 4px;">
+        <button id="salir" type="button" class="btn btn-danger btn-lg btn-block" onclick="salir()">Cerrar</button>
+    </div>
+
+</body>
+
+<footer style="position:relative;bottom: 0;">
+    <div class="text-center" style="background-color: white;">
+        Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a
+            href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+        <br>Iconos diseñados por <a href="http://www.freepik.com/" title="Freepik">Freepik</a> from <a
+            href="https://www.flaticon.es/" title="Flaticon"> www.flaticon.es</a>
+        <div>Icons made by <a href="https://www.flaticon.com/authors/iconixar" title="iconixar">iconixar</a> from <a
+                href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+        <div>Iconos diseñados por <a href="https://www.flaticon.es/autores/bqlqn" title="bqlqn">bqlqn</a> from <a
+                href="https://www.flaticon.es/" title="Flaticon">www.flaticon.es</a></div>
+        Iconos diseñados por <a href="http://www.pixelinspired.com/" title="Zlatko Najdenovski">Zlatko Najdenovski</a>
+        from <a href="https://www.flaticon.es/" title="Flaticon"> www.flaticon.es</a>
+        <br>Iconos diseñados por <a
+            href="https://www.flaticon.es/icono-gratis/nevando_2444434?term=nevando&page=2&position=4"
+            title="Pixelmeetup">Pixelmeetup</a> from <a href="https://www.flaticon.es/" title="Flaticon">
+            www.flaticon.es</a>
+    </div>
+</footer>
+
+
+<script src="inicio.js"></script>
+<script>
+    var estado = isDay();
+    var saludo = document.getElementById('saludo')
+    if (estado == true) {
+        saludo.innerHTML = "<h3>¡Buenos Días!</h3>"
+    } else {
+        saludo.innerHTML = "<h3>¡Buenas Noches!</h3>"
+    }
+</script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+
+</html>
